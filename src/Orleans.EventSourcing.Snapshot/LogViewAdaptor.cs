@@ -424,7 +424,7 @@ namespace Orleans.EventSourcing.Snapshot
             }
             else
             {
-                var count = await _eventStorage.EventsCount(_grainTypeName, Services.GrainReference);
+                var count = await _eventStorage.EventsCount<TLogEntry>(_grainTypeName, Services.GrainReference);
 
                 _snapshotState.StateAndMetaData.GlobalVersion = count + _snapshotState.StateAndMetaData.Log.Count;
             }
