@@ -41,7 +41,8 @@ namespace SimpleSample.Silo
             return this;
         }
 
-        public async Task<int> EventsCount(string grainTypeName, GrainReference grainReference)
+        public async Task<int> EventsCount<TEvent>(string grainTypeName, GrainReference grainReference)
+            where TEvent : class
         {
             var (_, lastEventNumber) = await ReadLastEvent(grainTypeName, grainReference);
 
@@ -53,6 +54,7 @@ namespace SimpleSample.Silo
             GrainReference grainReference,
             int start,
             int count)
+            where TEvent : class
         {
             if (count <= 0)
             {
@@ -97,6 +99,7 @@ namespace SimpleSample.Silo
             GrainReference grainReference,
             IEnumerable<TEvent> events,
             int expectedVersion)
+            where TEvent : class
         {
             if (events?.Any() == true)
             {
