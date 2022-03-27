@@ -11,6 +11,12 @@
     <PackageProjectUrl>https://github.com/FalconnServices/Orleans.EventSourcing.Snapshot</PackageProjectUrl>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>Orleans.EventSourcing.Snapshot</PackageId>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/FalconnServices/Orleans.EventSourcing.Snapshot</RepositoryUrl>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="DeepCloner" Version="0.10.2" />
     <PackageReference Include="Microsoft.Orleans.EventSourcing" Version="3.4.0" />
